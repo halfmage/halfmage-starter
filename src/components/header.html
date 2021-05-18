@@ -1,3 +1,28 @@
-<header>
-  <h2>Header</h2>
+<header class="flex items-center justify-between px-4">
+  <h1 class="font-bold">halfmage-starter</h1>
+
+  <nav class="flex">
+    <div x-data="{ dropdown1: false }" class="relative">
+      <button @click="dropdown1 = true" class="p-4">Dropdown ⬇</button>
+      <div x-show="dropdown1" @click.away="dropdown1 = false" class="w-64 p-4 shadow-xl absolute left-0 bg-white z-20">
+        <ul>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div x-data="{ dropdown2: false }" class="relative">
+      <button @click="dropdown2 = true" class="p-4">Text dropdown ⬇</button>
+      <div x-show="dropdown2" @click.away="dropdown2 = false" class="w-64 p-4 shadow-xl absolute left-0 bg-white z-20">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nostrum similique alias blanditiis accusantium deserunt. Voluptatem est iure numquam adipisci quis nisi similique dolor iste sapiente iusto, maiores tenetur! Asperiores, expedita eligendi!
+      </div>
+    </div>
+
+    <button @click="dropdown2 = true" class="p-4">Normal link</button>
+  </nav>
+
+  <a class="font-bold">v0.8.0</a>
+
 </header>
