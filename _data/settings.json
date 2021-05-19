@@ -2,5 +2,6 @@
   "title": "halfmage-starter",
   "description": "A simple starter template with 11ty, tailwindcss and alpinejs!",
   "locale": "en",
-  "url": "https://halfmage-starter.netlify.app/"
+  "url": "https://halfmage-starter.netlify.app/",
+  "fontName": "nunito-v16-latin"
 }
