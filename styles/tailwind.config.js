@@ -13,8 +13,11 @@ module.exports = {
       white: '#fff',
       black: '#000',
       gray: warmGray,
-      primary: colors.lightBlue,
+      primary: colors.emerald,
     },
+    fontFamily: {
+      'sans': ['Nunito', 'sans-serif']
+    }
   },
   variants: {},
   plugins: [],

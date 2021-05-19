@@ -1,13 +1,15 @@
+
+const Image = require("@11ty/eleventy-img")
 const htmlmin = require('html-minifier')
 const sharp = require("sharp")
-const Image = require("@11ty/eleventy-img")
 const now = String(Date.now())
 
-async function imageShortcode(src, alt, sizes) {
-  let metadata = await Image(`./src/static/images/${src}.jpg`, {
+async function imageShortcode(src, alt, sizes = "100vw") {
+  let metadata = await Image(`./images/${src}.jpg`, {
     widths: [600, 1000, 1600],
     formats: ["avif", "jpeg"],
-    outputDir: "./_site/img/"
+    urlPath: "/images/",
+    outputDir: "./_site/images/"
   });
   let imageAttributes = {
     alt,
@@ -23,7 +25,8 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setUseGitIgnore(false)
 
-  eleventyConfig.addPassthroughCopy("src/static")
+  eleventyConfig.addPassthroughCopy("images")
+  eleventyConfig.addPassthroughCopy("fonts")
 
   eleventyConfig.addWatchTarget('./_tmp/style.css')
 
@@ -32,8 +35,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     './node_modules/alpinejs/dist/alpine.js': './js/alpine.js',
   })
-
-  eleventyConfig.addPassthroughCopy("static");
 
   eleventyConfig.addShortcode('version', function () {
     return now
@@ -57,12 +58,6 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
-    dir: {
-      input: "src",
-      includes: "components",
-      layouts: "layouts",
-      data: "data",
-    },
     htmlTemplateEngine: "njk",
   };
 }
