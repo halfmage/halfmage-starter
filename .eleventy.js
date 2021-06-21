@@ -1,7 +1,6 @@
-
 const Image = require("@11ty/eleventy-img")
-const htmlmin = require('html-minifier')
 const sharp = require("sharp")
+const htmlmin = require('html-minifier')
 const now = String(Date.now())
 
 async function imageShortcode(src, alt, sizes = "100vw") {

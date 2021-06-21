@@ -16,7 +16,7 @@ module.exports = {
       primary: colors.emerald,
     },
     fontFamily: {
-      'sans': ['Nunito', 'sans-serif']
+      'sans': ['Inter', 'sans-serif']
     }
   },
   variants: {},
