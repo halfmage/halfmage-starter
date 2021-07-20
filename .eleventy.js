@@ -1,5 +1,4 @@
 const Image = require("@11ty/eleventy-img")
-const sharp = require("sharp")
 const htmlmin = require('html-minifier')
 const now = String(Date.now())
 
