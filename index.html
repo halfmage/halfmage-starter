@@ -3,27 +3,18 @@ layout: default
 title: Homepage
 ---
 
-{% include "header.html" %}
-
-<div class="container p-4 mx-auto my-32">
-  <div class="grid md:grid-cols-6 gap-8">
-    <div class="md:col-span-4 flex flex-col justify-center">
-      
-      <div x-data="{menu1:false}" class="relative">
-        <span @click="menu1=true" class="inline-block text-primary-600 p-2 focus:outline-none cursor-pointer border border-primary-600">
-          Menu button
-        </span>
-        <div x-show.transition="menu1" @click.away="menu1 = false" class="absolute left-0 w-max p-4 shadow-xl bg-white">
-          Menu content ...
-        </div>
-      </div>
-
-      <h2 class="text-4xl mt-8 font-bold mb-8 tracking-tight text-primary-600">Pretty nice leaf!</h2>
-      <p class="lg:text-lg 2xl:text-xl mb-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, commodi delectus? Sequi dolor quaerat odit blanditiis culpa, enim ex dolorum sint voluptatum dolorem non reprehenderit tenetur, explicabo beatae quia dolore maiores incidunt.</p>
-      <p class="lg:text-lg 2xl:text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quod distinctio natus neque corrupti enim tempore. Optio eum odio doloribus delectus cum quam saepe alias architecto. Numquam eligendi culpa voluptatem ut eos similique et obcaecati, minus esse voluptas, molestias harum!</p>
-    </div>
-    <div class="md:col-span-2 image w-full order-first md:order-last max-h-64 md:max-h-full">
-      {% image "christian-wiediger-WkfDrhxDMC8-unsplash", "" %}
-    </div>
+<div class="container grid grid-cols-6 gap-4 h-screen items-center mx-auto">
+  <div class="image w-full h-96 col-span-3">
+    {% image "image3", "image3" %}
+  </div>
+  <div class="image w-full h-96">
+    {% image "image1", "image1" %}
+  </div>
+  <div class="image w-full h-96">
+    {% image "image2", "image2" %}
+  </div>
+  <div class="image w-full h-96">
+    {% image "image3", "image3" %}
   </div>
 </div>
+
